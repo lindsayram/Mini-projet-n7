@@ -1,0 +1,12 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Prata&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Général */
+
+:root{
+    --grey: rgba(122, 122, 122, 1);
+    --black: rgba(0, 0, 0, 1);
+    --primaryfont:"Open sans", sans-serif;
+    --titlefont:"Prata", sans-serif;
+    --linkfont:"Roboto", sans-serif;
+}
