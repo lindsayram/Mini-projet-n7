@@ -10,3 +10,97 @@
     --titlefont:"Prata", sans-serif;
     --linkfont:"Roboto", sans-serif;
 }
+
+a{
+    text-decoration: none;
+    font-family: var(--linkfont);
+}
+
+p{
+    font-family: var(--primaryfont);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* Desktop */
+/* Header */
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    max-width: 1440px;
+    padding: 0 15px;
+    gap: 30px;
+    
+    nav{
+        ul{
+            display: flex;
+            gap: 30px;
+            padding: 0;
+
+            li{
+                list-style: none;
+
+                a{
+                    color: var(--grey);
+                    font-size: 16px;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+
+    ul{
+        display: flex;
+        gap: 30px;
+        padding: 0;
+
+        li{
+            list-style: none;
+
+            i{
+                color: var(--grey);
+                font-size: 24px;
+            }
+        }
+    }
+}
+
+/* Footer */
+footer{
+    background-color: var(--black);
+    color: white;
+    text-align: center;
+    padding: 84px 10px 10px 10px;
+}
+
+/* Tablette (1024px jusqu'à 768px) */
+@media screen and (max-width:1024px) {
+    
+    header{
+        gap: 25px;
+
+        nav{
+            ul{
+                gap: 20px;
+            }
+        }
+    }
+}
+
+/* Mobile (à partir de 767px) */
+
+header{
+    flex-wrap: wrap;
+    justify-content: center;
+
+    nav{
+        ul{
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+
+}
