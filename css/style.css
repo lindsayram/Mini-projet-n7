@@ -21,6 +21,13 @@ h1, h2{
     font-size: 52px;
 }
 
+h3{
+    font-family: var(--titlefont);
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 3px;
+}
+
 a{
     text-decoration: none;
     font-family: var(--linkfont);
@@ -34,6 +41,62 @@ p{
 
 .container{
     max-width: 1440px;
+}
+
+.content-wom-acc{
+        display: grid;
+        gap: 20px;
+}
+
+.content-men-kids{
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;        
+    padding: 30px 0;
+
+    p{
+        margin-top: 30px;
+    }
+
+    a{
+        background-color: var(--black);
+        color: white;
+        font-family: var(--linkfont);
+        font-size: 15px;
+        font-weight: 500;
+        padding: 11px 25px;
+        width: fit-content;
+        border-radius: 5px;
+        justify-self: end;
+    }
+}
+
+.price{
+    font-size: 24px;
+    margin-top: 7px;
+}
+
+img{
+        width: 100%;
+        object-fit: cover;
+}
+
+.four-cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 30px;
+    padding: 30px 0;
+}
+
+.card{
+    display: grid;
+    gap: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+
+    div{
+            padding-left: 12px;
+        }
 }
 
 /* Desktop */
@@ -84,48 +147,53 @@ header{
 
 /* Main */
 #en-tete{
+    position: relative;
+
+    &::before{
+        content: "";
+        background-color: rgba(0, 0, 0, 0.4);
+        position: absolute;
+        inset: 0;
+    }
+
     img{
         height: 700px;
         object-fit: cover;
         width: 100%;
-        position: relative
     }
 
     div{
         position: absolute;
-        color: white;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
 
         h1,p{
             text-align: center;
+            color: white;
         }
     }
 }
 
-#women{
+#women, #accessories{
     margin: auto;
     display: flex;
     align-items: center;
     padding: 50px 20px;
     gap: 20px;
 
-    .content{
-        display: grid;
-        gap: 20px;
-
-        a{
-            background-color: var(--black);
-            color: white;
-            font-family: var(--linkfont);
-            font-size: 15px;
-            font-weight: 500;
-            padding: 11px 25px;
-            width: fit-content;
-        }
+    a{
+        background-color: var(--black);
+        color: white;
+        font-family: var(--linkfont);
+        font-size: 15px;
+        font-weight: 500;
+        padding: 11px 25px;
+        width: fit-content;
+        border-radius: 5px;
     }
 
     img{
-        width: 100%;
-        object-fit: cover;
         flex: 1;
     }
 }
@@ -139,62 +207,16 @@ header{
     padding: 30px;
 
     article{
-        display: grid;
-        gap: 10px;
-        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
-        border-radius: 10px;
 
         img{
-            width: 100%;
-            height: 380px;
-            object-fit: cover;
             border-radius: 10px 10px 0 0;
-        }
-
-        div{
-            padding-left: 12px;
-
-            h3{
-                font-family: var(--titlefont);
-                font-size: 20px;
-                font-weight: 400;
-                margin-bottom: 3px;
-            }
-
-            .price{
-                font-size: 24px;
-                margin-top: 7px;
-
-            }
         }
     }
 }
 
-#men{
+#men, #kids, #sales{
     margin: auto;
     padding: 60px 20px;
-
-    .content{
-        align-items: center;
-        display: flex;
-        justify-content: space-between;
-
-        p{
-            margin: 20px 0;
-        }
-
-        a{
-            background-color: var(--black);
-            color: white;
-            font-family: var(--linkfont);
-            font-size: 15px;
-            font-weight: 500;
-            padding: 11px 25px;
-            width: fit-content;
-            border-radius: 5px;
-        
-        }
-    }
 }
 
 /* Footer */
@@ -219,10 +241,10 @@ footer{
     }
 
     main{
-        #women{
+        #women, #accessories{
             flex-wrap: wrap;
 
-            .content{
+            .content-wom-acc{
                 margin: auto;
             
                 h2{
@@ -241,6 +263,10 @@ footer{
 
 @media screen and (max-width:767px) {
     
+    h1, h2{
+        font-size: 48px;
+    }
+
     header{
         flex-wrap: wrap;
         justify-content: center;
@@ -251,12 +277,37 @@ footer{
                 justify-content: center;
             }
         }
+        .desktop{
+            padding: 0 0 15px 0;
+        }
 
     }
 
     main{
+        #women, #accessories{
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+
+            a{
+                justify-self: end;
+            }
+        }
+
         .cards{
             grid-template-columns: 1fr;
         }
+
+        #men, #kids, #sales{
+            .content-men-kids{
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .four-cards{
+                grid-template-columns: 1fr;
+            }
+        }
+        
     }
 }
